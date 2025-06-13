@@ -1,9 +1,15 @@
 from azure.core.credentials import AzureKeyCredential
 from azure.ai.formrecognizer import DocumentAnalysisClient
+from dotenv import load_dotenv
+import os
 
 
-endpoint = "https://recognizerazure.cognitiveservices.azure.com/"
-key = "BQwpwv1tsRM9pz85gwBu6uVPmaC2jxSUIamHStyL1eDbzj4UexqvJQQJ99BFACYeBjFXJ3w3AAALACOGu32T"
+
+load_dotenv()
+
+
+endpoint = os.getenv("ENDPOINT")
+key = os.getenv("KEY")
 
 filePath = "https://storageformrecognized.blob.core.windows.net/container/sample-invoice.pdf"
 fileLocale = "en-US"
